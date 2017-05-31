@@ -11,20 +11,20 @@ namespace Practicum4
         {
             CD xd = new CD
             {
-                Title = "Manala",
-                Artist = "Korpiklaani",
+                Title = "Awake",
+                Artist = "Dream Theater",
                 Tracks = new List<Track>
                 {
-                    new Track{Title = "BOOM", Artist = "Korpiklaani", Length = new TimeSpan(0,03,00) },
-                    new Track { Title = "XD", Artist = "Korpiklaani", Length = new TimeSpan(0, 03, 12) },
-                    new Track{Title = "RealMusic", Artist = "Korpiklaani" , Length = new TimeSpan(0,03,06) }
+                    new Track{Title = "BOOM", Artist = "Dream Theater", Length = new TimeSpan(0,03,00) },
+                    new Track { Title = "XD", Artist = "Dream Theater", Length = new TimeSpan(0, 03, 12) },
+                    new Track{Title = "RealMusic", Artist = "Dream Theater" , Length = new TimeSpan(0,03,06) }
                 }
             };
 
             String xmlString;
             using (var wc = new System.Net.WebClient())
             {
-                xmlString = wc.DownloadString(@"http://ws.audioscrobbler.com/2.0/?method=album.getInfo&album=Manala&artist=Korpiklaani&api_key=b5cbf8dcef4c6acfc5698f8709841949");
+                xmlString = wc.DownloadString(@"http://ws.audioscrobbler.com/2.0/?method=album.getInfo&album=awake&artist=Dream%20Theater&api_key=b5cbf8dcef4c6acfc5698f8709841949");
             }
             XDocument xdXml = XDocument.Parse(xmlString);
 
